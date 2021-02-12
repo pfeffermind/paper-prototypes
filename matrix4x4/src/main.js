@@ -10,7 +10,7 @@ var config = {
 
     var game = new Phaser.Game(config);
 
-
+    // BEISPIEL-ÄNDERUNG
 
     function preload ()
     {
