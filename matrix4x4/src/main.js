@@ -6,6 +6,9 @@ var config = {
   scene: {
     preload: preload,
     create: create
+  },
+  scale: {
+    autoCenter: Phaser.Scale.CENTER_BOTH
   }
 };
 
