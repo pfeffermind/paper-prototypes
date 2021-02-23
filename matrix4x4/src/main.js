@@ -59,23 +59,21 @@ function create ()
   for (var yPos = 0; yPos < 4; yPos++) {
     for (var xPos = 0; xPos < 4; xPos++) {
       console.log(xPos, yPos);
-      this.btnArray[xPos][yPos] = this.add.image(xStart+xPos*xStep, yStart+yPos*yStep, yPos+"-"+xPos);
+      this.btnArray[xPos][yPos] = this.add.image(xStart+xPos*xStep, yStart+yPos*yStep, "0-0");
       this.btnArray[xPos][yPos].setInteractive({ useHandCursor: true });
-      this.btnArray[xPos][yPos].xPos = xPos;
-      this.btnArray[xPos][yPos].yPos = yPos;
+      this.btnArray[xPos][yPos].xPos = 0;
+      this.btnArray[xPos][yPos].yPos = 0;
     }
   }
 
   this.input.on ( 'gameobjectdown', function (pointer, gameObject) {
     console.log(gameObject.xPos, gameObject.yPos);
-
     gameObject.xPos++
     if (gameObject.xPos>3) {
       gameObject.xPos=0
       gameObject.yPos++
     }
     if (gameObject.yPos>3) gameObject.yPos = 0;
-
     gameObject.setTexture (gameObject.yPos +"-"+ gameObject.xPos);
   });
 
